@@ -95,17 +95,32 @@ CLLocationManager *locationManager;
     
     NSArray *results = [jsonObject objectForKey:@"results"];
     NSDictionary *addressStuff = [results objectAtIndex:0];
-    NSArray *address = [addressStuff objectForKey:@"address_components"];
-    for (int i = 0; i < [address count]; i++) {
-        NSString *res = [[address objectAtIndex:i] objectForKey:@"long_name"];
-        NSLog(res);
+    NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
+    NSString *rCity;
+    NSString *rState;
+    for (int i = 0; i < [addressComp count]; i++) {
+        Boolean locality = false;
+        Boolean state = false;
+        NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
+        NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
+        for (int j = 0; j < [types count]; j++) {
+            NSString *type = [types objectAtIndex:j];
+            if ([type isEqualToString:@"locality"]){
+                locality = true;
+            }else if ([type isEqualToString:@"administrative_area_level_1"]){
+                state = true;
+            }
+        }
+
+        if(locality){
+            rCity = res;
+            locality = false;
+        }
+        if (state) {
+            rState = res;
+            state = false;
+        }
     }
-    int index1 = [address count]-3;
-    int index2 = [address count]-2;
-    NSDictionary *city = [address objectAtIndex:index1];
-    NSDictionary *region = [address objectAtIndex:index2];
-    NSString *rCity = [city objectForKey:@"long_name"];
-    NSString *rState = [region  objectForKey:@"long_name"];
     
     rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
