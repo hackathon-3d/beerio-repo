@@ -21,7 +21,6 @@
 @synthesize cityField;
 @synthesize stateField;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,7 +51,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toResults"]) {
         brewerydbconnect *connection = [[brewerydbconnect alloc] init];
-        NSString *returnedJSON = [connection getLocations:(cityField.text) withRegion:(stateField.text)];
+        
+        NSString *city = [cityField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *region = [stateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        city = [city stringByReplacingOccurrencesOfString:@" "
+                                               withString:@"+"];
+        region = [region stringByReplacingOccurrencesOfString:@" "
+                                                   withString:@"+"];
+        NSString *returnedJSON = [connection getLocations:(city) withRegion:(region)];
+
         
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.data = returnedJSON;
