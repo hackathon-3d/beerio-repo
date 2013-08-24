@@ -33,17 +33,7 @@ GMSMapView *mapView_;
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     
-    
-    
-    BreweryDetailsViewController *control = [[BreweryDetailsViewController alloc] init];
-    
-    control.breweryId = marker.userData;
-    NSLog(@"GAY");
-    NSLog(control.breweryId);
-    
-    [self performSegueWithIdentifier: @"getDetails" sender: self];
-
-    
+    [self wayUberButton: marker.userData];
 }
 
 - (void)viewDidLoad
@@ -100,7 +90,6 @@ GMSMapView *mapView_;
     
     
     
-    
   
     
     [super viewDidLoad];
@@ -119,5 +108,19 @@ GMSMapView *mapView_;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)wayUberButton:(id)sender {
+    NSLog(@"merica");
+    NSLog(sender);
+    [self performSegueWithIdentifier:(@"getDetails") sender:sender];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"getDetails"]) {
+        BreweryDetailsViewController *destController = segue.destinationViewController;
+        destController.breweryId = sender;
+        
+         
+    }
+         }
 @end

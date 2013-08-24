@@ -17,6 +17,9 @@
 @property float longitude;
 @property (nonatomic, strong) IBOutlet UILabel *breweryLabel;
 @property (nonatomic, strong) NSString *breweryName;
+- (IBAction)wayUberButton:(id)sender;
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
