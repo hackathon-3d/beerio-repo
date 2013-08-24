@@ -71,15 +71,10 @@ CLLocationManager *locationManager;
     NSString *returnedJSON;
     if ([segue.identifier isEqualToString:@"toResults"]) {
         
-        NSString *city = [cityField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        NSString *region = [stateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        city = [city stringByReplacingOccurrencesOfString:@" "
+        NSString *query = [cityStateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        query = [query stringByReplacingOccurrencesOfString:@" "
                                                withString:@"+"];
-        region = [region stringByReplacingOccurrencesOfString:@" "
-                                                   withString:@"+"];
-        returnedJSON = [connection getLocations:(city) withRegion:(region)];
-
-        
+        returnedJSON = [connection getCityState:(query)];
         
     }
     
@@ -89,6 +84,39 @@ CLLocationManager *locationManager;
 
         
     }
+    NSLog(returnedJSON);
+    NSError *jsonParsingError = nil;
+    NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                               options:0
+                                                                 error:&jsonParsingError];
+    
+    NSArray *results = [jsonObject objectForKey:@"results"];
+    NSDictionary *addressStuff = [results objectAtIndex:0];
+    NSArray *address = [addressStuff objectForKey:@"address_components"];
+    for (int i = 0; i < [address count]; i++) {
+        NSString *res = [[address objectAtIndex:i] objectForKey:@"long_name"];
+        NSLog(res);
+    }
+    int index1 = [address count]-3;
+    int index2 = [address count]-2;
+    NSDictionary *city = [address objectAtIndex:index1];
+    NSDictionary *region = [address objectAtIndex:index2];
+    NSString *rCity = [city objectForKey:@"long_name"];
+    NSString *rState = [region  objectForKey:@"long_name"];
+    
+    rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    rCity = [rCity stringByReplacingOccurrencesOfString:@" "
+                                             withString:@"+"];
+    rState = [rState stringByReplacingOccurrencesOfString:@" "
+                                               withString:@"+"];
+    
+    
+    returnedJSON = [connection getLocations: rCity withRegion: rState];
+
     DetailViewController *destViewController = segue.destinationViewController;
     destViewController.data = returnedJSON;
 }

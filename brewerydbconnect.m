@@ -16,6 +16,8 @@
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
     
+    NSLog(url);
+    
     NSError *error = [[NSError alloc] init];
     NSHTTPURLResponse *responseCode = nil;
     
