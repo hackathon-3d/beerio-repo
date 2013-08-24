@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="4" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
@@ -25,7 +25,6 @@
                             <constraint firstItem="27" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LAk-gc-aCl"/>
                             <constraint firstItem="27" firstAttribute="centerY" secondItem="26" secondAttribute="centerY" type="default" id="fbb-bQ-YI1"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Search Results" id="53"/>
@@ -245,6 +244,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7So-om-91r"/>
+        <segue reference="zJ9-ng-sN1"/>
     </inferredMetricsTieBreakers>
 </document>

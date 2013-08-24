@@ -64,6 +64,10 @@ CLLocationManager *locationManager;
     
     
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -86,7 +90,7 @@ CLLocationManager *locationManager;
 
         
     }
-    NSLog(returnedJSON);
+    
     NSError *jsonParsingError = nil;
     NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -96,44 +100,66 @@ CLLocationManager *locationManager;
                                                                  error:&jsonParsingError];
     
     NSArray *results = [jsonObject objectForKey:@"results"];
-    NSDictionary *addressStuff = [results objectAtIndex:0];
-    NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
-    NSString *rCity;
-    NSString *rState;
-    for (int i = 0; i < [addressComp count]; i++) {
-        Boolean locality = false;
-        Boolean state = false;
-        NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
-        NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
-        for (int j = 0; j < [types count]; j++) {
-            NSString *type = [types objectAtIndex:j];
-            if ([type isEqualToString:@"locality"]){
-                locality = true;
-            }else if ([type isEqualToString:@"administrative_area_level_1"]){
-                state = true;
+    if ([results count] == 0) {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+                                                        message:@"Make sure you are connected Bitch!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Try Again"
+                                              otherButtonTitles:nil];
+        [message show];
+        returnedJSON = @"";
+    } else{
+        NSDictionary *addressStuff = [results objectAtIndex:0];
+        NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
+        NSString *rCity;
+        NSString *rState;
+        for (int i = 0; i < [addressComp count]; i++) {
+            Boolean locality = false;
+            Boolean state = false;
+            NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
+            NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
+            for (int j = 0; j < [types count]; j++) {
+                NSString *type = [types objectAtIndex:j];
+                if ([type isEqualToString:@"locality"]){
+                    locality = true;
+                }else if ([type isEqualToString:@"administrative_area_level_1"]){
+                    state = true;
+                }
+            }
+            
+            if(locality){
+                rCity = res;
+                locality = false;
+            }
+            if (state) {
+                rState = res;
+                state = false;
             }
         }
-
-        if(locality){
-            rCity = res;
-            locality = false;
+        
+        rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        rCity = [rCity stringByReplacingOccurrencesOfString:@" "
+                                                 withString:@"+"];
+        rState = [rState stringByReplacingOccurrencesOfString:@" "
+                                                   withString:@"+"];
+        if (rCity == NULL || rState == NULL ) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+                                                              message:@"Make sure you are connected Bitch!"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Try Again"
+                                                    otherButtonTitles: nil];
+            [message show];
+            returnedJSON = @"";
         }
-        if (state) {
-            rState = res;
-            state = false;
+        else{
+            returnedJSON = [connection getLocations: rCity withRegion: rState];
+            
+            
+            
         }
+        
     }
-    
-    rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    rCity = [rCity stringByReplacingOccurrencesOfString:@" "
-                                             withString:@"+"];
-    rState = [rState stringByReplacingOccurrencesOfString:@" "
-                                               withString:@"+"];
-    
-    
-    returnedJSON = [connection getLocations: rCity withRegion: rState];
-
     DetailViewController *destViewController = segue.destinationViewController;
     destViewController.data = returnedJSON;
 }

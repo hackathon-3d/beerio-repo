@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property (weak, nonatomic) IBOutlet UITextField *stateField;
 @property (weak, nonatomic) IBOutlet UITextField *cityStateField;
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 - (IBAction)currentLocation:(id)sender;
 
 
