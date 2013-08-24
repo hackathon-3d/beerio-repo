@@ -44,6 +44,7 @@
 		F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */; };
 		F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */; };
 		F7DF075F17C84DAB00E2B8BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */; };
+		FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = FF38723D17C85BA700D95498 /* brewerydbconnect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FF38723C17C85BA700D95498 /* brewerydbconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brewerydbconnect.h; sourceTree = "<group>"; };
+		FF38723D17C85BA700D95498 /* brewerydbconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = brewerydbconnect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */,
 				F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */,
 				F7DF075817C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png */,
+				FF38723C17C85BA700D95498 /* brewerydbconnect.h */,
+				FF38723D17C85BA700D95498 /* brewerydbconnect.m */,
 				F7DF075617C84A6500E2B8BF /* Default-Portrait~ipad.png */,
 				B2AE646217C845F30044D65F /* AVFoundation.framework */,
 				B2AE646317C845F30044D65F /* CoreData.framework */,
@@ -359,6 +364,7 @@
 				B2AE643117C83EE40044D65F /* AppDelegate.m in Sources */,
 				B2AE643D17C83EE40044D65F /* MasterViewController.m in Sources */,
 				B2AE644017C83EE40044D65F /* DetailViewController.m in Sources */,
+				FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
