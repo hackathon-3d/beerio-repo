@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tmA-65-f3Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Xn-lf-XgU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="4" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
@@ -35,14 +35,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="-775"/>
+            <point key="canvasLocation" x="1243" y="-775"/>
         </scene>
         <!--Landing View Controller-->
         <scene sceneID="Nvj-Ll-OS8">
             <objects>
                 <viewController id="tmA-65-f3Y" customClass="LandingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7e4-OI-18K">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroung.png" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-0G-GMr"/>
@@ -66,7 +66,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="tmA-65-f3Y" eventType="touchUpInside" id="x6z-Gn-hq3"/>
-                                    <segue destination="4" kind="modal" identifier="toResults" id="5Cp-sr-er8"/>
+                                    <segue destination="4" kind="push" identifier="toResults" id="n14-vR-eHe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-6R-LfM">
@@ -93,7 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="currentLocation:" destination="tmA-65-f3Y" eventType="touchUpInside" id="fad-IE-qAg"/>
-                                    <segue destination="4" kind="modal" identifier="toResultsCurrentLocation" id="QfP-2C-jmg"/>
+                                    <segue destination="4" kind="push" identifier="toResultsCurrentLocation" id="7So-om-91r"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="instructions-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-yv-NYp">
@@ -130,6 +130,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KNu-tU-VwP"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cityField" destination="BWJ-6R-LfM" id="Lkz-km-Qq0"/>
@@ -138,7 +139,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-w9-Qsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1821" y="-767"/>
+            <point key="canvasLocation" x="-847" y="-767"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bg3-rW-YXh">
+            <objects>
+                <navigationController id="3Xn-lf-XgU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ffN-g4-eU3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tmA-65-f3Y" kind="relationship" relationship="rootViewController" id="SnP-P3-OzT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPk-KH-mSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2050" y="-761"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PRj-or-t4c">
+            <objects>
+                <navigationController id="hb3-PX-tmg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="NtP-GZ-VUL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3kW-0G-jKB">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4" kind="relationship" relationship="rootViewController" id="zJ9-ng-sN1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="68J-ic-bDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="-183"/>
         </scene>
     </scenes>
     <resources>
@@ -177,6 +216,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QfP-2C-jmg"/>
+        <segue reference="7So-om-91r"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,7 @@
 //    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
 //    splitViewController.delegate = (id)navigationController.topViewController;
     [GMSServices provideAPIKey:@"AIzaSyChJIEXSLynRFphweemDUuxn3ITKnpdMw8"];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     return YES;
 }
 							
