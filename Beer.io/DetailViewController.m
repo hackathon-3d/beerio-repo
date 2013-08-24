@@ -31,8 +31,17 @@ GMSMapView *mapView_;
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     
-    DetailViewController *landscapeCoverController = [[DetailViewController alloc] init];
-    [self presentModalViewController:landscapeCoverController animated:YES];
+
+    BreweryDetailsViewController *control = [[BreweryDetailsViewController alloc] init];
+    control.modalPresentationStyle = UIModalPresentationFormSheet;
+    control.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:control animated:YES];
+    control.view.superview.frame = CGRectMake(0, 0, 540, 620); //it's important to do this after presentModalViewController
+    control.view.superview.center = self.view.center;
+
+    
+    //Show the tweet sheet!
+    //[self presentModalViewController:control animated:YES];
     
 }
 
@@ -102,8 +111,12 @@ GMSMapView *mapView_;
   
     
     [super viewDidLoad];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+   
+    
 }
 
 
