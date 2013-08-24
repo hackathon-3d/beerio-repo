@@ -37,18 +37,8 @@ GMSMapView *mapView_;
 }
 
 - (void)viewDidLoad
-{
-    
-    
-    NSError *jsonParsingError = nil;
-    NSData *json=[data dataUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
-                                                               options:0
-                                                                 error:&jsonParsingError];
-    
-    NSArray *breweryArray = [jsonObject objectForKey:@"data"];
+{  
+    NSArray *breweryArray = data;
     
     NSDictionary *brewery;
     

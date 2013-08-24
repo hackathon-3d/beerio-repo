@@ -12,7 +12,7 @@
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet NSString *data;
+@property (weak, nonatomic) IBOutlet NSArray *data;
 @property float latitude;
 @property float longitude;
 

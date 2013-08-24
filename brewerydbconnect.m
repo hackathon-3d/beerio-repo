@@ -36,6 +36,13 @@
     return [self getResponse:url];
 }
 
+- (NSString *) getLocations:(NSString *)region{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=%@&region=%@",apiKey, region];
+    
+    return [self getResponse:url];
+}
+
 - (NSString *) getAllLocations{
     
     NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=%@",apiKey];
@@ -43,6 +50,12 @@
     return [self getResponse:url];
 }
 
+- (NSString *) getAllLocations: (int)page{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=%@&p=%i",apiKey, page];
+    
+    return [self getResponse:url];
+}
 
 - (NSString *) getLocation: (NSString *)locationId{
     

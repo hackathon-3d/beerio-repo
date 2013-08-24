@@ -11,7 +11,9 @@
 @interface brewerydbconnect : NSObject
 - (NSString *) getResponse:(NSString *) url;
 - (NSString *) getLocations: (NSString *)city withRegion:(NSString *)region;
+- (NSString *) getLocations: (NSString *)region;
 - (NSString *) getAllLocations;
+- (NSString *) getAllLocations: (int) page;
 - (NSString *) getLocation: (NSString *)locationId;
 - (NSString *) searchBrewerys: (NSString *)query;
 - (NSString *) getCityState:(float)lat withLon:(float)lon;

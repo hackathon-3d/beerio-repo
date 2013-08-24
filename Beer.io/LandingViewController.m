@@ -73,6 +73,11 @@ CLLocationManager *locationManager;
     
     brewerydbconnect *connection = [[brewerydbconnect alloc] init];
     NSString *returnedJSON;
+    NSError *jsonParsingError;
+    NSData *json;
+    NSDictionary *jsonObject;
+    NSString *rCity;
+    NSString *rState;
     float lat = 0;
     float lon = 0;
     if ([segue.identifier isEqualToString:@"toResults"]) {
@@ -81,10 +86,10 @@ CLLocationManager *locationManager;
         query = [query stringByReplacingOccurrencesOfString:@" "
                                                  withString:@"+"];
         returnedJSON = [connection getCityState:(query)];
-        NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+        json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
         
         
-        NSError *jsonParsingError = nil;
+        jsonParsingError = nil;
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
                                                                    options:0
                                                                      error:&jsonParsingError];
@@ -101,8 +106,7 @@ CLLocationManager *locationManager;
         } else{
             NSDictionary *addressStuff = [results objectAtIndex:0];
             NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
-            NSString *rCity;
-            NSString *rState;
+            
             for (int i = 0; i < [addressComp count]; i++) {
                 Boolean locality = false;
                 Boolean state = false;
@@ -173,12 +177,83 @@ CLLocationManager *locationManager;
     }else{
         lat = locationManager.location.coordinate.latitude;
         lon = locationManager.location.coordinate.longitude;
+        returnedJSON = [connection getCityState:(lat) withLon:lon];
+        json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+        
+        
+        jsonParsingError = nil;
+        jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                                   options:0
+                                                                     error:&jsonParsingError];
+        
+        NSArray *results = [jsonObject objectForKey:@"results"];
+        if ([results count] == 0) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+                                                              message:@"Make sure you are connected Bitch!"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Try Again"
+                                                    otherButtonTitles:nil];
+            [message show];
+            returnedJSON = @"";
+        } else{
+            NSDictionary *addressStuff = [results objectAtIndex:0];
+            NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
+            
+            for (int i = 0; i < [addressComp count]; i++) {
+                Boolean locality = false;
+                Boolean state = false;
+                NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
+                NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
+                for (int j = 0; j < [types count]; j++) {
+                    NSString *type = [types objectAtIndex:j];
+                    if ([type isEqualToString:@"locality"]){
+                        locality = true;
+                    }else if ([type isEqualToString:@"administrative_area_level_1"]){
+                        state = true;
+                    }
+                }
+                
+                if(locality){
+                    rCity = res;
+                    locality = false;
+                }
+                if (state) {
+                    rState = res;
+                    state = false;
+                }
+            }
+            
+            rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            rCity = [rCity stringByReplacingOccurrencesOfString:@" "
+                                                     withString:@"+"];
+            rState = [rState stringByReplacingOccurrencesOfString:@" "
+                                                                        withString:@"+"];
+        }
     }
     
     
-    returnedJSON = [connection getAllLocations];
+    returnedJSON = [connection getLocations:(rState)];
+    json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+    jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                               options:0
+                                                                 error:&jsonParsingError];
+    NSString *numPS = [jsonObject objectForKey:@"numberOfPages"];
+    int  numPages = [numPS integerValue];
+    NSArray *allData = [jsonObject objectForKey:@"data"];
+    NSArray *tmpData;
+    for (int i = 2; i <= numPages; i++) {
+        returnedJSON = [connection getAllLocations: (i)];
+        json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                                   options:0
+                                                                     error:&jsonParsingError];
+        tmpData = [jsonObject objectForKey:@"data"];
+        allData = [allData arrayByAddingObjectsFromArray:tmpData];
+    }
+    
     DetailViewController *destViewController = segue.destinationViewController;
-    destViewController.data = returnedJSON;
+    destViewController.data = allData;
     destViewController.latitude = lat;
     destViewController.longitude = lon;
     
