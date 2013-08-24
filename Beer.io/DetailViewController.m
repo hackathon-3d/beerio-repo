@@ -94,6 +94,7 @@ GMSMapView *mapView_;
         
         // Creates a marker in the center of the map.
         GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.icon = [UIImage imageNamed:@"marker.png"];
         marker.position = CLLocationCoordinate2DMake(latit, longit);
         marker.title = [location objectForKey:@"name"];
         marker.snippet = [location objectForKey:@"description"];
