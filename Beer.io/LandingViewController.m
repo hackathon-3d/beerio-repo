@@ -79,8 +79,10 @@ CLLocationManager *locationManager;
     }
     
     else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
-
-        returnedJSON = [connection getCityState:(locationManager.location.coordinate.latitude) withLong:(locationManager.location.coordinate.longitude)];
+        float lat = locationManager.location.coordinate.latitude;
+        float lon = locationManager.location.coordinate.longitude;
+        
+        returnedJSON = [connection getCityState:(lat) withLon:(lon)];
 
         
     }
