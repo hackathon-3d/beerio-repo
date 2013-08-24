@@ -7,6 +7,7 @@
 //
 
 #import "LandingViewController.h"
+#import "DetailViewController.h"
 
 @interface LandingViewController ()
 
@@ -44,10 +45,17 @@
 
 - (IBAction)searchButton:(id)sender {
       
-    brewerydbconnect *connection = [[brewerydbconnect alloc] init];
-    NSString *returnedJSON = [connection getLocations:(cityField.text) withRegion:(stateField.text)];
     
     
-    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toResults"]) {
+        brewerydbconnect *connection = [[brewerydbconnect alloc] init];
+        NSString *returnedJSON = [connection getLocations:(cityField.text) withRegion:(stateField.text)];
+        
+        DetailViewController *destViewController = segue.destinationViewController;
+        destViewController.data = returnedJSON;
+    }
 }
 @end
