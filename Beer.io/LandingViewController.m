@@ -84,7 +84,7 @@ CLLocationManager *locationManager;
     else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
                 
 
-        NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true_or_false", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
+        NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         [request setHTTPMethod:@"GET"];
