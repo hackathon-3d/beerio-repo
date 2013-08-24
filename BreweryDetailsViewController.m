@@ -66,7 +66,7 @@ NSArray *recipes;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     //
     
@@ -74,7 +74,9 @@ NSArray *recipes;
     NSString *name = [beer objectForKey:@"name"];
     NSDictionary *labels = [beer objectForKey:@"labels"];
     NSString *img = [labels objectForKey:@"icon"];
+    NSString *desc = [beer objectForKey:@"description"];
     cell.textLabel.text = name;
+    cell.detailTextLabel.text = desc;
     cell.imageView.image = [UIImage imageWithData:
                             [NSData dataWithContentsOfURL:
                              [NSURL URLWithString: img]]];
