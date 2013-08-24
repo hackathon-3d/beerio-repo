@@ -52,13 +52,12 @@
                                     <constraint firstAttribute="width" constant="240" id="zeZ-aM-saH"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jq-4c-bMO">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6U-lX-RDI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="vPb-yg-N9F"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="search_button.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,33 +69,77 @@
                                     <segue destination="4" kind="modal" identifier="toResults" id="5Cp-sr-er8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sy-JS-hdS">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-6R-LfM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sy-JS-hdS">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="Lu1-BZ-NNT"/>
+                                    <constraint firstAttribute="height" constant="80" id="xb6-hn-zFu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-6R-LfM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5Hq-dx-Bq7"/>
+                                    <constraint firstAttribute="width" constant="508" id="F8D-4o-FYk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="city.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZER-Th-nxs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="SM7-2l-VBU"/>
+                                    <constraint firstAttribute="width" constant="144" id="rDz-fa-1WM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="state.png" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-i6-Wjr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="HjE-wU-KIJ"/>
+                                    <constraint firstAttribute="height" constant="77" id="iKB-Ey-Glf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjD-ge-TQd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="6Ft-Vc-AnA"/>
+                                    <constraint firstAttribute="width" constant="225" id="oc5-Oh-VZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="use_current_location_button-1.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="instructions-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-yv-NYp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="Blm-vg-gfQ"/>
+                                    <constraint firstAttribute="width" constant="412" id="izx-7W-f4p"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="baseline" secondItem="4jq-4c-bMO" secondAttribute="baseline" type="default" id="0FJ-yI-EEE"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4Sy-JS-hdS" secondAttribute="leading" type="default" id="1ST-V7-oUm"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" type="default" id="600-WF-9Sn"/>
-                            <constraint firstAttribute="trailing" secondItem="4jq-4c-bMO" secondAttribute="trailing" constant="191" id="8OC-Jg-0CC"/>
+                            <constraint firstItem="ZER-Th-nxs" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="292" id="67g-nt-jkM"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="339" id="7Nh-HU-ae8"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="bottom" secondItem="7e4-OI-18K" secondAttribute="bottom" type="default" id="Blv-cb-wp2"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="Hwd-bP-9vL"/>
+                            <constraint firstItem="S6U-lX-RDI" firstAttribute="top" secondItem="PjD-ge-TQd" secondAttribute="top" type="default" id="CVd-oX-tnb"/>
+                            <constraint firstItem="S6U-lX-RDI" firstAttribute="leading" secondItem="PjD-ge-TQd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="HZE-CU-Yav"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="38" id="Izz-ND-g8R"/>
+                            <constraint firstItem="bYU-i6-Wjr" firstAttribute="top" secondItem="ZER-Th-nxs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K4K-8n-FiH"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LgF-yj-JHb"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4Sy-JS-hdS" secondAttribute="leading" type="default" id="V7V-rs-sYZ"/>
-                            <constraint firstItem="4Sy-JS-hdS" firstAttribute="trailing" secondItem="S6U-lX-RDI" secondAttribute="trailing" type="default" id="fGE-co-toT"/>
-                            <constraint firstAttribute="bottom" secondItem="S6U-lX-RDI" secondAttribute="bottom" constant="322" id="n7W-32-NYx"/>
-                            <constraint firstItem="4jq-4c-bMO" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="223" id="rPj-Ae-4eH"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4jq-4c-bMO" secondAttribute="leading" type="default" id="rTR-Rf-jOS"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4jq-4c-bMO" secondAttribute="trailing" type="default" id="sDZ-Zg-LNc"/>
+                            <constraint firstAttribute="bottom" secondItem="PjD-ge-TQd" secondAttribute="bottom" constant="120" id="NTP-l2-q86"/>
+                            <constraint firstItem="ZER-Th-nxs" firstAttribute="centerY" secondItem="BWJ-6R-LfM" secondAttribute="centerY" type="default" id="Nje-Lv-CZ7"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="77" id="Ntc-2n-SFH"/>
+                            <constraint firstItem="PjD-ge-TQd" firstAttribute="bottom" secondItem="S6U-lX-RDI" secondAttribute="bottom" type="default" id="Q0W-Fc-A82"/>
+                            <constraint firstItem="bYU-i6-Wjr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="274" id="UdD-KD-L5c"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="V9v-Jj-ewh"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="452" id="o03-zk-L0c"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="478" id="oTf-t6-T0J"/>
+                            <constraint firstItem="S6U-lX-RDI" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="ytB-ps-0xh"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" type="default" id="yxd-aT-Dlr"/>
                             <constraint firstItem="4Sy-JS-hdS" firstAttribute="top" secondItem="BWJ-6R-LfM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zsv-Zd-qsL"/>
                         </constraints>
@@ -104,8 +147,8 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="cityField" destination="BWJ-6R-LfM" id="H54-fD-Y13"/>
-                        <outlet property="stateField" destination="4Sy-JS-hdS" id="frr-WB-quF"/>
+                        <outlet property="cityField" destination="BWJ-6R-LfM" id="Lkz-km-Qq0"/>
+                        <outlet property="stateField" destination="4Sy-JS-hdS" id="BpG-HS-Q2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-w9-Qsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,27 +158,13 @@
     </scenes>
     <resources>
         <image name="backgroung.png" width="1024" height="768"/>
+        <image name="city.png" width="200" height="100"/>
+        <image name="instructions-2.png" width="752" height="312"/>
         <image name="logo_small-1.png" width="400" height="250"/>
+        <image name="search_button.png" width="200" height="100"/>
+        <image name="state.png" width="200" height="100"/>
+        <image name="use_current_location_button-1.png" width="300" height="100"/>
     </resources>
-    <classes>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LandingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LandingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
