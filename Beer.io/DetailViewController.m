@@ -48,7 +48,30 @@ GMSMapView *mapView_;
 - (void)viewDidLoad
 {
     
-    NSLog(data);
+    
+    NSError *jsonParsingError = nil;
+    NSData *json=[data dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                               options:0
+                                                                 error:&jsonParsingError];
+    
+    NSArray *breweryArray = [jsonObject objectForKey:@"data"];
+    
+    NSDictionary *brewery;
+    
+    for(int i=0; i<[breweryArray count];i++)
+    {
+        brewery= [breweryArray objectAtIndex:i];
+        NSLog([brewery objectForKey:@"name"]);
+        
+        NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"latitude"]]);
+        NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"longitude"]]);
+    }
+    
+    
+    
     
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
@@ -62,14 +85,41 @@ GMSMapView *mapView_;
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(32.7025, -80.04806);
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
+    marker.title = @"City";
+    marker.snippet = @"Region";
     marker.map = mapView_;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: NO];
+}
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
