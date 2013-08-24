@@ -16,6 +16,7 @@
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)navigationController.topViewController;
+    [GMSServices provideAPIKey:@"AIzaSyCDh65BX6VVqn0a_ivQZIdf00XgJkt8B00"];
     return YES;
 }
 							
