@@ -67,18 +67,60 @@
                                     <constraint firstAttribute="width" constant="240" id="zeZ-aM-saH"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jq-4c-bMO">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6U-lX-RDI">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="tmA-65-f3Y" eventType="touchUpInside" id="x6z-Gn-hq3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sy-JS-hdS">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-6R-LfM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Lu1-BZ-NNT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="baseline" secondItem="4jq-4c-bMO" secondAttribute="baseline" type="default" id="0FJ-yI-EEE"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" type="default" id="600-WF-9Sn"/>
+                            <constraint firstAttribute="trailing" secondItem="4jq-4c-bMO" secondAttribute="trailing" constant="191" id="8OC-Jg-0CC"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="bottom" secondItem="7e4-OI-18K" secondAttribute="bottom" type="default" id="Blv-cb-wp2"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="Hwd-bP-9vL"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="38" id="Izz-ND-g8R"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LgF-yj-JHb"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4Sy-JS-hdS" secondAttribute="leading" type="default" id="V7V-rs-sYZ"/>
+                            <constraint firstItem="4Sy-JS-hdS" firstAttribute="trailing" secondItem="S6U-lX-RDI" secondAttribute="trailing" type="default" id="fGE-co-toT"/>
+                            <constraint firstAttribute="bottom" secondItem="S6U-lX-RDI" secondAttribute="bottom" constant="322" id="n7W-32-NYx"/>
+                            <constraint firstItem="4jq-4c-bMO" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="223" id="rPj-Ae-4eH"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4jq-4c-bMO" secondAttribute="leading" type="default" id="rTR-Rf-jOS"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4jq-4c-bMO" secondAttribute="trailing" type="default" id="sDZ-Zg-LNc"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" type="default" id="yxd-aT-Dlr"/>
+                            <constraint firstItem="4Sy-JS-hdS" firstAttribute="top" secondItem="BWJ-6R-LfM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zsv-Zd-qsL"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="cityField" destination="BWJ-6R-LfM" id="H54-fD-Y13"/>
+                        <outlet property="stateField" destination="4Sy-JS-hdS" id="frr-WB-quF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-w9-Qsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,23 +204,6 @@
         <image name="backgroung.png" width="1024" height="768"/>
         <image name="logo_small-1.png" width="400" height="250"/>
     </resources>
-    <classes>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LandingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LandingViewController.h"/>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

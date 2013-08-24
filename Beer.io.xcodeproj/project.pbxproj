@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D2FA017C8641700DC26A5 /* LandingViewController.m */; };
+		B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA217C8644200DC26A5 /* backgroung.png */; };
+		B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA317C8644200DC26A5 /* logo_small-1.png */; };
+		B29D2FA717C8659100DC26A5 /* search_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA617C8659100DC26A5 /* search_button.png */; };
 		B2AE642117C83EE40044D65F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE642017C83EE40044D65F /* UIKit.framework */; };
 		B2AE642317C83EE40044D65F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE642217C83EE40044D65F /* Foundation.framework */; };
 		B2AE642517C83EE40044D65F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE642417C83EE40044D65F /* CoreGraphics.framework */; };
@@ -58,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B29D2F9F17C8641700DC26A5 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		B29D2FA017C8641700DC26A5 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		B29D2FA217C8644200DC26A5 /* backgroung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroung.png; sourceTree = "<group>"; };
+		B29D2FA317C8644200DC26A5 /* logo_small-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small-1.png"; sourceTree = "<group>"; };
+		B29D2FA617C8659100DC26A5 /* search_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_button.png; sourceTree = "<group>"; };
 		B2AE641D17C83EE40044D65F /* Beer.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beer.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AE642017C83EE40044D65F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2AE642217C83EE40044D65F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,8 +111,8 @@
 		F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FF38723C17C85BA700D95498 /* brewerydbconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brewerydbconnect.h; sourceTree = "<group>"; };
-		FF38723D17C85BA700D95498 /* brewerydbconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = brewerydbconnect.m; sourceTree = "<group>"; };
+		FF38723C17C85BA700D95498 /* brewerydbconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = brewerydbconnect.h; path = ../brewerydbconnect.h; sourceTree = "<group>"; };
+		FF38723D17C85BA700D95498 /* brewerydbconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = brewerydbconnect.m; path = ../brewerydbconnect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +155,13 @@
 		B2AE641417C83EE40044D65F = {
 			isa = PBXGroup;
 			children = (
+				B29D2FA617C8659100DC26A5 /* search_button.png */,
+				B29D2FA217C8644200DC26A5 /* backgroung.png */,
+				B29D2FA317C8644200DC26A5 /* logo_small-1.png */,
 				F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */,
 				F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */,
 				F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */,
 				F7DF075817C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png */,
-				FF38723C17C85BA700D95498 /* brewerydbconnect.h */,
-				FF38723D17C85BA700D95498 /* brewerydbconnect.m */,
 				F7DF075617C84A6500E2B8BF /* Default-Portrait~ipad.png */,
 				B2AE646217C845F30044D65F /* AVFoundation.framework */,
 				B2AE646317C845F30044D65F /* CoreData.framework */,
@@ -198,6 +208,8 @@
 		B2AE642617C83EE40044D65F /* Beer.io */ = {
 			isa = PBXGroup;
 			children = (
+				FF38723C17C85BA700D95498 /* brewerydbconnect.h */,
+				FF38723D17C85BA700D95498 /* brewerydbconnect.m */,
 				B2AE642F17C83EE40044D65F /* AppDelegate.h */,
 				B2AE643017C83EE40044D65F /* AppDelegate.m */,
 				B2AE643817C83EE40044D65F /* MainStoryboard.storyboard */,
@@ -206,6 +218,8 @@
 				B2AE643E17C83EE40044D65F /* DetailViewController.h */,
 				B2AE643F17C83EE40044D65F /* DetailViewController.m */,
 				B2AE642717C83EE40044D65F /* Supporting Files */,
+				B29D2F9F17C8641700DC26A5 /* LandingViewController.h */,
+				B29D2FA017C8641700DC26A5 /* LandingViewController.m */,
 			);
 			path = Beer.io;
 			sourceTree = "<group>";
@@ -326,6 +340,9 @@
 				F7DF075917C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png in Resources */,
 				F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */,
 				F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */,
+				B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */,
+				B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */,
+				B29D2FA717C8659100DC26A5 /* search_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +382,7 @@
 				B2AE643D17C83EE40044D65F /* MasterViewController.m in Sources */,
 				B2AE644017C83EE40044D65F /* DetailViewController.m in Sources */,
 				FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */,
+				B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

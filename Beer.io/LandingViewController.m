@@ -10,10 +10,25 @@
 
 @interface LandingViewController ()
 
+
 @end
+
+
 
 @implementation LandingViewController
 
+@synthesize cityField;
+@synthesize stateField;
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -27,4 +42,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchButton:(id)sender {
+      
+    brewerydbconnect *connection = [[brewerydbconnect alloc] init];
+    NSString *returnedJSON = [connection getLocations:(cityField.text) withRegion:(stateField.text)];
+    
+    
+    
+}
 @end

@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "brewerydbconnect.h"
+
 
 @interface LandingViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (weak, nonatomic) IBOutlet UITextField *stateField;
 
+
+- (IBAction)searchButton:(id)sender;
 
 @end
