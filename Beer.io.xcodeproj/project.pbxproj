@@ -24,6 +24,8 @@
 		B2AE644A17C83EE40044D65F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE642217C83EE40044D65F /* Foundation.framework */; };
 		B2AE645217C83EE40044D65F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2AE645017C83EE40044D65F /* InfoPlist.strings */; };
 		B2AE645517C83EE40044D65F /* Beer_ioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AE645417C83EE40044D65F /* Beer_ioTests.m */; };
+		F7BCE09517C840ED00368C30 /* berr.io_logo_reg.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */; };
+		F7BCE09817C8412300368C30 /* berr.io_logo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		B2AE645117C83EE40044D65F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2AE645317C83EE40044D65F /* Beer_ioTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Beer_ioTests.h; sourceTree = "<group>"; };
 		B2AE645417C83EE40044D65F /* Beer_ioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beer_ioTests.m; sourceTree = "<group>"; };
+		F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_reg.png; sourceTree = "<group>"; };
+		F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		B2AE641417C83EE40044D65F = {
 			isa = PBXGroup;
 			children = (
+				F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */,
+				F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */,
 				B2AE642617C83EE40044D65F /* Beer.io */,
 				B2AE644D17C83EE40044D65F /* Beer.ioTests */,
 				B2AE641F17C83EE40044D65F /* Frameworks */,
@@ -241,6 +247,8 @@
 				B2AE643517C83EE40044D65F /* Default@2x.png in Resources */,
 				B2AE643717C83EE40044D65F /* Default-568h@2x.png in Resources */,
 				B2AE643A17C83EE40044D65F /* MainStoryboard.storyboard in Resources */,
+				F7BCE09517C840ED00368C30 /* berr.io_logo_reg.png in Resources */,
+				F7BCE09817C8412300368C30 /* berr.io_logo_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +469,7 @@
 				B2AE645A17C83EE40044D65F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2AE645B17C83EE40044D65F /* Build configuration list for PBXNativeTarget "Beer.ioTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +478,7 @@
 				B2AE645D17C83EE40044D65F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
