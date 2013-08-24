@@ -137,7 +137,7 @@ CLLocationManager *locationManager;
                                                      withString:@"+"];
             rState = [rState stringByReplacingOccurrencesOfString:@" "
                                                        withString:@"+"];
-            if (rCity == NULL || rState == NULL ) {
+            if (rCity == NULL && rState == NULL ) {
                 UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
                                                                   message:@"Make sure you are connected Bitch!"
                                                                  delegate:self
