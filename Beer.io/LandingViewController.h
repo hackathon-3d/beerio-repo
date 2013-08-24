@@ -13,6 +13,7 @@
 @interface LandingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property (weak, nonatomic) IBOutlet UITextField *stateField;
+@property (weak, nonatomic) IBOutlet UITextField *cityStateField;
 
 - (IBAction)currentLocation:(id)sender;
 

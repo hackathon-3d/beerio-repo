@@ -21,6 +21,7 @@
 
 @synthesize cityField;
 @synthesize stateField;
+@synthesize cityStateField;
 CLLocationManager *locationManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B289902917C8A0E000394537 /* city_state.png in Resources */ = {isa = PBXBuildFile; fileRef = B289902817C8A0E000394537 /* city_state.png */; };
 		B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D2FA017C8641700DC26A5 /* LandingViewController.m */; };
 		B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA217C8644200DC26A5 /* backgroung.png */; };
 		B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA317C8644200DC26A5 /* logo_small-1.png */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B289902817C8A0E000394537 /* city_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city_state.png; sourceTree = "<group>"; };
 		B29D2F9F17C8641700DC26A5 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		B29D2FA017C8641700DC26A5 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		B29D2FA217C8644200DC26A5 /* backgroung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroung.png; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		B2AE641417C83EE40044D65F = {
 			isa = PBXGroup;
 			children = (
+				B289902817C8A0E000394537 /* city_state.png */,
 				B29D2FB217C87BB600DC26A5 /* instructions-2.png */,
 				B29D2FB017C87ADC00DC26A5 /* instructions-1.png */,
 				B29D2FAE17C87A7000DC26A5 /* instructions.png */,
@@ -367,6 +370,7 @@
 				B29D2FAF17C87A7000DC26A5 /* instructions.png in Resources */,
 				B29D2FB117C87ADC00DC26A5 /* instructions-1.png in Resources */,
 				B29D2FB317C87BB600DC26A5 /* instructions-2.png in Resources */,
+				B289902917C8A0E000394537 /* city_state.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

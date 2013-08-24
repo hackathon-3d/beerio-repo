@@ -69,14 +69,6 @@
                                     <segue destination="4" kind="modal" identifier="toResults" id="5Cp-sr-er8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sy-JS-hdS">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="xb6-hn-zFu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-6R-LfM">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -86,18 +78,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="city.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZER-Th-nxs">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="SM7-2l-VBU"/>
-                                    <constraint firstAttribute="width" constant="144" id="rDz-fa-1WM"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="state.png" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-i6-Wjr">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="HjE-wU-KIJ"/>
-                                    <constraint firstAttribute="height" constant="77" id="iKB-Ey-Glf"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjD-ge-TQd">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="6Ft-Vc-AnA"/>
@@ -118,41 +98,42 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="instructions-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-yv-NYp">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="Blm-vg-gfQ"/>
-                                    <constraint firstAttribute="width" constant="412" id="izx-7W-f4p"/>
+                                    <constraint firstAttribute="height" constant="107" id="PMK-x4-XqV"/>
+                                    <constraint firstAttribute="width" constant="258" id="Pfc-7s-93K"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="city_state.png" translatesAutoresizingMaskIntoConstraints="NO" id="liS-Es-QF7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="ECX-3P-B52"/>
+                                    <constraint firstAttribute="width" constant="253" id="LJl-6Y-YMn"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="4Sy-JS-hdS" secondAttribute="leading" type="default" id="1ST-V7-oUm"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" type="default" id="600-WF-9Sn"/>
-                            <constraint firstItem="ZER-Th-nxs" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="292" id="67g-nt-jkM"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="339" id="7Nh-HU-ae8"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="bottom" secondItem="7e4-OI-18K" secondAttribute="bottom" type="default" id="Blv-cb-wp2"/>
                             <constraint firstItem="S6U-lX-RDI" firstAttribute="top" secondItem="PjD-ge-TQd" secondAttribute="top" type="default" id="CVd-oX-tnb"/>
+                            <constraint firstItem="liS-Es-QF7" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="155" id="GjU-M2-T0l"/>
                             <constraint firstItem="S6U-lX-RDI" firstAttribute="leading" secondItem="PjD-ge-TQd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="HZE-CU-Yav"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="38" id="Izz-ND-g8R"/>
-                            <constraint firstItem="bYU-i6-Wjr" firstAttribute="top" secondItem="ZER-Th-nxs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K4K-8n-FiH"/>
+                            <constraint firstItem="PjD-ge-TQd" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="361" id="JBE-80-FYW"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LgF-yj-JHb"/>
-                            <constraint firstAttribute="bottom" secondItem="PjD-ge-TQd" secondAttribute="bottom" constant="120" id="NTP-l2-q86"/>
-                            <constraint firstItem="ZER-Th-nxs" firstAttribute="centerY" secondItem="BWJ-6R-LfM" secondAttribute="centerY" type="default" id="Nje-Lv-CZ7"/>
-                            <constraint firstItem="YOM-yv-NYp" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="77" id="Ntc-2n-SFH"/>
                             <constraint firstItem="PjD-ge-TQd" firstAttribute="bottom" secondItem="S6U-lX-RDI" secondAttribute="bottom" type="default" id="Q0W-Fc-A82"/>
-                            <constraint firstItem="bYU-i6-Wjr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="274" id="UdD-KD-L5c"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="V9v-Jj-ewh"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="452" id="o03-zk-L0c"/>
-                            <constraint firstItem="YOM-yv-NYp" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="478" id="oTf-t6-T0J"/>
-                            <constraint firstItem="S6U-lX-RDI" firstAttribute="trailing" secondItem="4Sy-JS-hdS" secondAttribute="trailing" type="default" id="ytB-ps-0xh"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="224" id="XHK-be-aLm"/>
+                            <constraint firstItem="S6U-lX-RDI" firstAttribute="trailing" secondItem="BWJ-6R-LfM" secondAttribute="trailing" type="default" id="Yi0-o9-CE2"/>
+                            <constraint firstAttribute="trailing" secondItem="liS-Es-QF7" secondAttribute="trailing" constant="66" id="ak5-E9-XJ9"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="top" secondItem="liS-Es-QF7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oFG-we-ssw"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="455" id="oRp-C9-RI2"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="67" id="okf-Nh-czX"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" type="default" id="yxd-aT-Dlr"/>
-                            <constraint firstItem="4Sy-JS-hdS" firstAttribute="top" secondItem="BWJ-6R-LfM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zsv-Zd-qsL"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cityField" destination="BWJ-6R-LfM" id="Lkz-km-Qq0"/>
-                        <outlet property="stateField" destination="4Sy-JS-hdS" id="BpG-HS-Q2Y"/>
+                        <outlet property="cityStateField" destination="BWJ-6R-LfM" id="DKG-Wi-uPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-w9-Qsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,34 +143,12 @@
     </scenes>
     <resources>
         <image name="backgroung.png" width="1024" height="768"/>
-        <image name="city.png" width="200" height="100"/>
+        <image name="city_state.png" width="415" height="109"/>
         <image name="instructions-2.png" width="752" height="312"/>
         <image name="logo_small-1.png" width="400" height="250"/>
         <image name="search_button.png" width="200" height="100"/>
-        <image name="state.png" width="200" height="100"/>
         <image name="use_current_location_button-1.png" width="300" height="100"/>
     </resources>
-    <classes>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="data" candidateClass="NSString"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LandingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LandingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="currentLocation:"/>
-                <relationship kind="action" name="searchButton:"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
