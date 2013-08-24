@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B289902917C8A0E000394537 /* city_state.png in Resources */ = {isa = PBXBuildFile; fileRef = B289902817C8A0E000394537 /* city_state.png */; };
+		B289902E17C8C11F00394537 /* BreweryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */; };
 		B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D2FA017C8641700DC26A5 /* LandingViewController.m */; };
 		B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA217C8644200DC26A5 /* backgroung.png */; };
 		B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA317C8644200DC26A5 /* logo_small-1.png */; };
@@ -71,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		B289902817C8A0E000394537 /* city_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city_state.png; sourceTree = "<group>"; };
+		B289902C17C8C11F00394537 /* BreweryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BreweryDetailsViewController.h; path = ../BreweryDetailsViewController.h; sourceTree = "<group>"; };
+		B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BreweryDetailsViewController.m; path = ../BreweryDetailsViewController.m; sourceTree = "<group>"; };
 		B29D2F9F17C8641700DC26A5 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		B29D2FA017C8641700DC26A5 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		B29D2FA217C8644200DC26A5 /* backgroung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroung.png; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 		B2AE642617C83EE40044D65F /* Beer.io */ = {
 			isa = PBXGroup;
 			children = (
+				B289902C17C8C11F00394537 /* BreweryDetailsViewController.h */,
+				B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */,
 				FF38723C17C85BA700D95498 /* brewerydbconnect.h */,
 				FF38723D17C85BA700D95498 /* brewerydbconnect.m */,
 				B2AE642F17C83EE40044D65F /* AppDelegate.h */,
@@ -415,6 +420,7 @@
 				B2AE644017C83EE40044D65F /* DetailViewController.m in Sources */,
 				FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */,
 				B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */,
+				B289902E17C8C11F00394537 /* BreweryDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
