@@ -48,6 +48,15 @@ GMSMapView *mapView_;
 - (void)viewDidLoad
 {
     
+    // Create a GMSCameraPosition that tells the map to display the
+    // coordinate -33.86,151.20 at zoom level 6.
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:32.7025
+                                                            longitude:-80.04806
+                                                                 zoom:6];
+    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView_.myLocationEnabled = YES;
+    self.view = mapView_;
+    
     
     NSError *jsonParsingError = nil;
     NSData *json=[data dataUsingEncoding:NSUTF8StringEncoding];
@@ -68,26 +77,25 @@ GMSMapView *mapView_;
         
         NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"latitude"]]);
         NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"longitude"]]);
+        
+        double latit = [[brewery objectForKey:@"latitude"] doubleValue];
+        double longit = [[brewery objectForKey:@"longitude"] doubleValue];
+        
+
+        // Creates a marker in the center of the map.
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = CLLocationCoordinate2DMake(latit, longit);
+        marker.title = [brewery objectForKey:@"name"];
+        marker.snippet = @"fuck you";
+        marker.map = mapView_;
     }
     
     
     
     
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:32.7025
-                                                            longitude:-80.04806
-                                                                 zoom:6];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
     
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(32.7025, -80.04806);
-    marker.title = @"City";
-    marker.snippet = @"Region";
-    marker.map = mapView_;
+    
+  
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
