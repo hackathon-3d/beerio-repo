@@ -114,18 +114,18 @@
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" type="default" id="600-WF-9Sn"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="bottom" secondItem="7e4-OI-18K" secondAttribute="bottom" type="default" id="Blv-cb-wp2"/>
                             <constraint firstItem="S6U-lX-RDI" firstAttribute="top" secondItem="PjD-ge-TQd" secondAttribute="top" type="default" id="CVd-oX-tnb"/>
-                            <constraint firstItem="liS-Es-QF7" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="155" id="GjU-M2-T0l"/>
                             <constraint firstItem="S6U-lX-RDI" firstAttribute="leading" secondItem="PjD-ge-TQd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="HZE-CU-Yav"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="38" id="Izz-ND-g8R"/>
-                            <constraint firstItem="PjD-ge-TQd" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="361" id="JBE-80-FYW"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="52" id="KZF-hP-zrO"/>
                             <constraint firstItem="z68-gx-5of" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LgF-yj-JHb"/>
+                            <constraint firstItem="PjD-ge-TQd" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="289" id="OkY-xL-Sgd"/>
                             <constraint firstItem="PjD-ge-TQd" firstAttribute="bottom" secondItem="S6U-lX-RDI" secondAttribute="bottom" type="default" id="Q0W-Fc-A82"/>
-                            <constraint firstItem="YOM-yv-NYp" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="224" id="XHK-be-aLm"/>
+                            <constraint firstItem="YOM-yv-NYp" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="200" id="W5d-8o-rwA"/>
                             <constraint firstItem="S6U-lX-RDI" firstAttribute="trailing" secondItem="BWJ-6R-LfM" secondAttribute="trailing" type="default" id="Yi0-o9-CE2"/>
-                            <constraint firstAttribute="trailing" secondItem="liS-Es-QF7" secondAttribute="trailing" constant="66" id="ak5-E9-XJ9"/>
+                            <constraint firstItem="liS-Es-QF7" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" constant="83" id="Zvh-oo-q0L"/>
+                            <constraint firstAttribute="trailing" secondItem="liS-Es-QF7" secondAttribute="trailing" constant="65" id="j1I-3M-kaU"/>
                             <constraint firstItem="BWJ-6R-LfM" firstAttribute="top" secondItem="liS-Es-QF7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oFG-we-ssw"/>
-                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="455" id="oRp-C9-RI2"/>
-                            <constraint firstItem="YOM-yv-NYp" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="67" id="okf-Nh-czX"/>
+                            <constraint firstItem="BWJ-6R-LfM" firstAttribute="leading" secondItem="7e4-OI-18K" secondAttribute="leading" constant="456" id="sbT-99-brQ"/>
                             <constraint firstItem="Njc-0G-GMr" firstAttribute="top" secondItem="7e4-OI-18K" secondAttribute="top" type="default" id="yxd-aT-Dlr"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -149,6 +149,28 @@
         <image name="search_button.png" width="200" height="100"/>
         <image name="use_current_location_button-1.png" width="300" height="100"/>
     </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="data" candidateClass="NSString"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LandingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LandingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="currentLocation:"/>
+                <relationship kind="action" name="searchButton:"/>
+                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cityStateField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
