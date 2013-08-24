@@ -89,7 +89,7 @@ GMSMapView *mapView_;
         marker.title = [location objectForKey:@"name"];
         marker.snippet = [location objectForKey:@"description"];
         marker.map = mapView_;
-        marker.userData = [brewery objectForKey: @"id"];
+        marker.userData = [location objectForKey: @"id"];
         NSLog(marker.userData);
         
         
