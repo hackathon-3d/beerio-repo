@@ -8,6 +8,7 @@
 
 #import "LandingViewController.h"
 #import "DetailViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface LandingViewController ()
 
@@ -20,6 +21,7 @@
 
 @synthesize cityField;
 @synthesize stateField;
+CLLocationManager *locationManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +34,11 @@
 
 - (void)viewDidLoad
 {
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [locationManager startUpdatingLocation];
         
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -41,6 +48,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)deviceLocation {
+    return [NSString stringWithFormat:@"latitude: %f longitude: %f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
+}
+
+
+- (IBAction)currentLocation:(id)sender {
 }
 
 - (IBAction)searchButton:(id)sender {
@@ -64,6 +79,24 @@
         
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.data = returnedJSON;
+    }
+    
+    else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
+                
+
+        NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true_or_false", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setHTTPMethod:@"GET"];
+        [request setURL:[NSURL URLWithString:url]];
+        
+        NSError *error = [[NSError alloc] init];
+        NSHTTPURLResponse *responseCode = nil;
+        
+        NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+        
+        //NSLog(oResponseData);
+        
     }
 }
 @end

@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property (weak, nonatomic) IBOutlet UITextField *stateField;
 
+- (IBAction)currentLocation:(id)sender;
+
 
 - (IBAction)searchButton:(id)sender;
 

@@ -111,6 +111,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="currentLocation:" destination="tmA-65-f3Y" eventType="touchUpInside" id="fad-IE-qAg"/>
+                                    <segue destination="4" kind="modal" identifier="toResultsCurrentLocation" id="QfP-2C-jmg"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="instructions-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-yv-NYp">
                                 <constraints>
@@ -170,4 +174,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="QfP-2C-jmg"/>
+    </inferredMetricsTieBreakers>
 </document>
