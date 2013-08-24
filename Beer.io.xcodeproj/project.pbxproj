@@ -10,7 +10,6 @@
 		B289902917C8A0E000394537 /* city_state.png in Resources */ = {isa = PBXBuildFile; fileRef = B289902817C8A0E000394537 /* city_state.png */; };
 		B289902E17C8C11F00394537 /* BreweryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */; };
 		B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D2FA017C8641700DC26A5 /* LandingViewController.m */; };
-		B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA217C8644200DC26A5 /* backgroung.png */; };
 		B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA317C8644200DC26A5 /* logo_small-1.png */; };
 		B29D2FA717C8659100DC26A5 /* search_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA617C8659100DC26A5 /* search_button.png */; };
 		B29D2FAA17C878B600DC26A5 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA817C878B600DC26A5 /* city.png */; };
@@ -57,6 +56,7 @@
 		F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */; };
 		F7DF075F17C84DAB00E2B8BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */; };
 		F7DF076817C8ADD400E2B8BF /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF076717C8ADD400E2B8BF /* marker.png */; };
+		F7DF076E17C8C76800E2B8BF /* backgroung.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF076D17C8C76800E2B8BF /* backgroung.png */; };
 		FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = FF38723D17C85BA700D95498 /* brewerydbconnect.m */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,6 @@
 		B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BreweryDetailsViewController.m; path = ../BreweryDetailsViewController.m; sourceTree = "<group>"; };
 		B29D2F9F17C8641700DC26A5 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		B29D2FA017C8641700DC26A5 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
-		B29D2FA217C8644200DC26A5 /* backgroung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroung.png; sourceTree = "<group>"; };
 		B29D2FA317C8644200DC26A5 /* logo_small-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small-1.png"; sourceTree = "<group>"; };
 		B29D2FA617C8659100DC26A5 /* search_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_button.png; sourceTree = "<group>"; };
 		B29D2FA817C878B600DC26A5 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F7DF076717C8ADD400E2B8BF /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		F7DF076D17C8C76800E2B8BF /* backgroung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroung.png; sourceTree = "<group>"; };
 		FF38723C17C85BA700D95498 /* brewerydbconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = brewerydbconnect.h; path = ../brewerydbconnect.h; sourceTree = "<group>"; };
 		FF38723D17C85BA700D95498 /* brewerydbconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = brewerydbconnect.m; path = ../brewerydbconnect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,11 +179,11 @@
 				B29D2FB017C87ADC00DC26A5 /* instructions-1.png */,
 				B29D2FAE17C87A7000DC26A5 /* instructions.png */,
 				B29D2FAC17C8791500DC26A5 /* use_current_location_button-1.png */,
+				F7DF076D17C8C76800E2B8BF /* backgroung.png */,
 				F7DF076717C8ADD400E2B8BF /* marker.png */,
 				B29D2FA817C878B600DC26A5 /* city.png */,
 				B29D2FA917C878B600DC26A5 /* state.png */,
 				B29D2FA617C8659100DC26A5 /* search_button.png */,
-				B29D2FA217C8644200DC26A5 /* backgroung.png */,
 				B29D2FA317C8644200DC26A5 /* logo_small-1.png */,
 				F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */,
 				F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */,
@@ -369,7 +369,6 @@
 				F7DF075917C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png in Resources */,
 				F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */,
 				F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */,
-				B29D2FA417C8644200DC26A5 /* backgroung.png in Resources */,
 				B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */,
 				B29D2FA717C8659100DC26A5 /* search_button.png in Resources */,
 				B29D2FAA17C878B600DC26A5 /* city.png in Resources */,
@@ -380,6 +379,7 @@
 				B29D2FB317C87BB600DC26A5 /* instructions-2.png in Resources */,
 				B289902917C8A0E000394537 /* city_state.png in Resources */,
 				F7DF076817C8ADD400E2B8BF /* marker.png in Resources */,
+				F7DF076E17C8C76800E2B8BF /* backgroung.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
