@@ -239,6 +239,7 @@ CLLocationManager *locationManager;
                                                                options:0
                                                                  error:&jsonParsingError];
     NSString *numPS = [jsonObject objectForKey:@"numberOfPages"];
+    NSString *numLoc = [jsonObject objectForKey:@"totalResults"];
     int  numPages = [numPS integerValue];
     NSArray *allData = [jsonObject objectForKey:@"data"];
     NSArray *tmpData;
@@ -254,6 +255,7 @@ CLLocationManager *locationManager;
     
     DetailViewController *destViewController = segue.destinationViewController;
     destViewController.data = allData;
+    NSLog([NSString stringWithFormat:@"%@ total results. and %i retrieved results",numLoc, [allData count]]);
     destViewController.latitude = lat;
     destViewController.longitude = lon;
     

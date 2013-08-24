@@ -16,6 +16,8 @@
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
     
+    NSLog(url);
+    
     NSError *error = [[NSError alloc] init];
     NSHTTPURLResponse *responseCode = nil;
     
@@ -69,6 +71,21 @@
     
     return [self getResponse:url];
 }
+- (NSString *) getBrewery: (NSString *)brewId{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/brewery/%@?key=%@", brewId, apiKey];
+    
+    return [self getResponse:url];
+}
+- (NSString *) getBreweryBeers: (NSString *)brewId{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/brewery/%@/beers?key=%@", brewId, apiKey];
+    
+    return [self getResponse:url];
+}
+
+
+
 - (NSString *) getCityState:(float)lat withLon:(float)lon{
     
     NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false", lat, lon];

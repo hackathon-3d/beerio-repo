@@ -16,6 +16,8 @@
 - (NSString *) getAllLocations: (int) page;
 - (NSString *) getLocation: (NSString *)locationId;
 - (NSString *) searchBrewerys: (NSString *)query;
+- (NSString *) getBrewery: (NSString *)brewId;
+- (NSString *) getBreweryBeers: (NSString *)brewId;
 - (NSString *) getCityState:(float)lat withLon:(float)lon;
 - (NSString *) getCityState:(NSString *)q;
 
