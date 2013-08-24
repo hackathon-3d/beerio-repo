@@ -71,7 +71,7 @@ GMSMapView *mapView_;
     // coordinate -33.86,151.20 at zoom level 6.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:mapLatit
                                                             longitude:mapLongit
-                                                                 zoom:8];
+                                                                 zoom:11];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
     self.view = mapView_;
@@ -96,7 +96,7 @@ GMSMapView *mapView_;
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(latit, longit);
         marker.title = [location objectForKey:@"name"];
-        marker.snippet = [brewery objectForKey:@"phone"];
+        marker.snippet = [location objectForKey:@"description"];
         marker.map = mapView_;
         
         

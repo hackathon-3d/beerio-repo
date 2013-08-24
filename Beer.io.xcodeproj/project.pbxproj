@@ -54,7 +54,6 @@
 		F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */; };
 		F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */; };
 		F7DF075F17C84DAB00E2B8BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */; };
-		F7DF076417C8996400E2B8BF /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF076317C8996400E2B8BF /* beer.png */; };
 		FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = FF38723D17C85BA700D95498 /* brewerydbconnect.m */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +123,6 @@
 		F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F7DF075E17C84DAB00E2B8BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F7DF076317C8996400E2B8BF /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer.png; path = ../../Desktop/Hackathon/beer.png; sourceTree = "<group>"; };
 		FF38723C17C85BA700D95498 /* brewerydbconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = brewerydbconnect.h; path = ../brewerydbconnect.h; sourceTree = "<group>"; };
 		FF38723D17C85BA700D95498 /* brewerydbconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = brewerydbconnect.m; path = ../brewerydbconnect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +170,6 @@
 				B29D2FB217C87BB600DC26A5 /* instructions-2.png */,
 				B29D2FB017C87ADC00DC26A5 /* instructions-1.png */,
 				B29D2FAE17C87A7000DC26A5 /* instructions.png */,
-				F7DF076317C8996400E2B8BF /* beer.png */,
 				B29D2FAC17C8791500DC26A5 /* use_current_location_button-1.png */,
 				B29D2FA817C878B600DC26A5 /* city.png */,
 				B29D2FA917C878B600DC26A5 /* state.png */,
@@ -370,7 +367,6 @@
 				B29D2FAF17C87A7000DC26A5 /* instructions.png in Resources */,
 				B29D2FB117C87ADC00DC26A5 /* instructions-1.png in Resources */,
 				B29D2FB317C87BB600DC26A5 /* instructions-2.png in Resources */,
-				F7DF076417C8996400E2B8BF /* beer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

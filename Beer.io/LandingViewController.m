@@ -95,7 +95,12 @@ CLLocationManager *locationManager;
         
         NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
         
-        //NSLog(oResponseData);
+        if([responseCode statusCode] != 200){
+            NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
+            
+        }
+        
+        NSLog([[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding]);
         
     }
 }
