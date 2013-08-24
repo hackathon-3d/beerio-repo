@@ -39,16 +39,15 @@ NSArray *recipes;
                                                                options:0
                                                                  error:&jsonParsingError];
     NSArray *results = [jsonObject objectForKey:@"data"];
-    NSMutableArray *beerNames = [[NSMutableArray alloc] init];
+    NSMutableArray *beers = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [results count]; i++) {
         NSDictionary *beer = [results objectAtIndex:i];
-        NSString *tmpName = [beer objectForKey:@"name"];
-        [beerNames addObject:tmpName];
+        [beers addObject:beer];
     }
     
 	// Do any additional setup after loading the view.
-    recipes = beerNames;
+    recipes = beers;
    
     
     
@@ -69,8 +68,11 @@ NSArray *recipes;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    //
     
-    cell.textLabel.text = [recipes objectAtIndex:indexPath.row];
+    NSDictionary *beer = [recipes objectAtIndex:indexPath.row];
+    NSString *name = [beer objectForKey:@"name"];
+    cell.textLabel.text = name;
     return cell;
 }
 
