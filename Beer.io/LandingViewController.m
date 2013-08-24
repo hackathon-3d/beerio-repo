@@ -73,94 +73,215 @@ CLLocationManager *locationManager;
     
     brewerydbconnect *connection = [[brewerydbconnect alloc] init];
     NSString *returnedJSON;
+    float lat = 0;
+    float lon = 0;
     if ([segue.identifier isEqualToString:@"toResults"]) {
         
         NSString *query = [cityStateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         query = [query stringByReplacingOccurrencesOfString:@" "
-                                               withString:@"+"];
-        returnedJSON = [connection getCityState:(query)];
-        
-    }
-    
-    else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
-        float lat = locationManager.location.coordinate.latitude;
-        float lon = locationManager.location.coordinate.longitude;
-        
-        returnedJSON = [connection getCityState:(lat) withLon:(lon)];
-
-        
-    }
-    
-    NSError *jsonParsingError = nil;
-    NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
-                                                               options:0
-                                                                 error:&jsonParsingError];
-    
-    NSArray *results = [jsonObject objectForKey:@"results"];
-    if ([results count] == 0) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
-                                                        message:@"Make sure you are connected Bitch!"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Try Again"
-                                              otherButtonTitles:nil];
-        [message show];
-        returnedJSON = @"";
-    } else{
-        NSDictionary *addressStuff = [results objectAtIndex:0];
-        NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
-        NSString *rCity;
-        NSString *rState;
-        for (int i = 0; i < [addressComp count]; i++) {
-            Boolean locality = false;
-            Boolean state = false;
-            NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
-            NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
-            for (int j = 0; j < [types count]; j++) {
-                NSString *type = [types objectAtIndex:j];
-                if ([type isEqualToString:@"locality"]){
-                    locality = true;
-                }else if ([type isEqualToString:@"administrative_area_level_1"]){
-                    state = true;
-                }
-            }
-            
-            if(locality){
-                rCity = res;
-                locality = false;
-            }
-            if (state) {
-                rState = res;
-                state = false;
-            }
-        }
-        
-        rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        rCity = [rCity stringByReplacingOccurrencesOfString:@" "
                                                  withString:@"+"];
-        rState = [rState stringByReplacingOccurrencesOfString:@" "
-                                                   withString:@"+"];
-        if (rCity == NULL || rState == NULL ) {
+        returnedJSON = [connection getCityState:(query)];
+        NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+        
+        
+        NSError *jsonParsingError = nil;
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                                   options:0
+                                                                     error:&jsonParsingError];
+        
+        NSArray *results = [jsonObject objectForKey:@"results"];
+        if ([results count] == 0) {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
                                                               message:@"Make sure you are connected Bitch!"
                                                              delegate:self
                                                     cancelButtonTitle:@"Try Again"
-                                                    otherButtonTitles: nil];
+                                                    otherButtonTitles:nil];
             [message show];
             returnedJSON = @"";
+        } else{
+            NSDictionary *addressStuff = [results objectAtIndex:0];
+            NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
+            NSString *rCity;
+            NSString *rState;
+            for (int i = 0; i < [addressComp count]; i++) {
+                Boolean locality = false;
+                Boolean state = false;
+                NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
+                NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
+                for (int j = 0; j < [types count]; j++) {
+                    NSString *type = [types objectAtIndex:j];
+                    if ([type isEqualToString:@"locality"]){
+                        locality = true;
+                    }else if ([type isEqualToString:@"administrative_area_level_1"]){
+                        state = true;
+                    }
+                }
+                
+                if(locality){
+                    rCity = res;
+                    locality = false;
+                }
+                if (state) {
+                    rState = res;
+                    state = false;
+                }
+            }
+            
+            rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            rCity = [rCity stringByReplacingOccurrencesOfString:@" "
+                                                     withString:@"+"];
+            rState = [rState stringByReplacingOccurrencesOfString:@" "
+                                                       withString:@"+"];
+            if (rCity == NULL || rState == NULL ) {
+                UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+                                                                  message:@"Make sure you are connected Bitch!"
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Try Again"
+                                                        otherButtonTitles: nil];
+                [message show];
+                returnedJSON = @"";
+            }
+            else{
+                returnedJSON = returnedJSON = [connection getCityState:(query)];
+                json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+                
+                NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                                           options:0
+                                                                             error:&jsonParsingError];
+                NSArray *results = [jsonObject objectForKey:@"results"];
+                if ([results count] == 0) {
+                    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+                                                                      message:@"Make sure you are connected Bitch!"
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Try Again"
+                                                            otherButtonTitles:nil];
+                    [message show];
+                    returnedJSON = @"";
+                } else{
+                    NSDictionary *addressStuff = [results objectAtIndex:0];
+                    NSDictionary *geo = [addressStuff objectForKey:@"geometry"];
+                    NSDictionary *location = [geo objectForKey:@"location"];
+                    NSString *latS = [location objectForKey:@"lat"];
+                    NSString *lonS = [location objectForKey:@"lng"];
+                    lat = [latS floatValue];
+                    lon = [lonS floatValue];
+                    
+                }
+            }
         }
-        else{
-            returnedJSON = [connection getLocations: rCity withRegion: rState];
-            
-            
-            
-        }
-        
+    }else{
+        lat = locationManager.location.coordinate.latitude;
+        lon = locationManager.location.coordinate.longitude;
     }
+    
+    
+    returnedJSON = [connection getAllLocations];
     DetailViewController *destViewController = segue.destinationViewController;
     destViewController.data = returnedJSON;
+    destViewController.latitude = lat;
+    destViewController.longitude = lon;
+    
+//    if(true){
+    
+//    }else{
+//        if ([segue.identifier isEqualToString:@"toResults"]) {
+//
+//            NSString *query = [cityStateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            query = [query stringByReplacingOccurrencesOfString:@" "
+//                                                     withString:@"+"];
+//            returnedJSON = [connection getCityState:(query)];
+//            
+//        }
+//        
+//        else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
+//            float lat = locationManager.location.coordinate.latitude;
+//            float lon = locationManager.location.coordinate.longitude;
+//            
+//            returnedJSON = [connection getCityState:(lat) withLon:(lon)];
+//            
+//            
+//        }
+//        
+//        NSError *jsonParsingError = nil;
+//        NSData *json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+//        
+//        
+//        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+//                                                                   options:0
+//                                                                     error:&jsonParsingError];
+//        
+//        NSArray *results = [jsonObject objectForKey:@"results"];
+//        if ([results count] == 0) {
+//            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+//                                                              message:@"Make sure you are connected Bitch!"
+//                                                             delegate:self
+//                                                    cancelButtonTitle:@"Try Again"
+//                                                    otherButtonTitles:nil];
+//            [message show];
+//            returnedJSON = @"";
+//        } else{
+//            NSDictionary *addressStuff = [results objectAtIndex:0];
+//            NSArray *addressComp = [addressStuff objectForKey:@"address_components"];
+//            NSString *rCity;
+//            NSString *rState;
+//            for (int i = 0; i < [addressComp count]; i++) {
+//                Boolean locality = false;
+//                Boolean state = false;
+//                NSString *res = [[addressComp objectAtIndex:i] objectForKey:@"long_name"];
+//                NSArray *types = [[addressComp objectAtIndex:i] objectForKey:@"types"];
+//                for (int j = 0; j < [types count]; j++) {
+//                    NSString *type = [types objectAtIndex:j];
+//                    if ([type isEqualToString:@"locality"]){
+//                        locality = true;
+//                    }else if ([type isEqualToString:@"administrative_area_level_1"]){
+//                        state = true;
+//                    }
+//                }
+//                
+//                if(locality){
+//                    rCity = res;
+//                    locality = false;
+//                }
+//                if (state) {
+//                    rState = res;
+//                    state = false;
+//                }
+//            }
+//            
+//            rCity = [rCity stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            rState = [rState stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            rCity = [rCity stringByReplacingOccurrencesOfString:@" "
+//                                                     withString:@"+"];
+//            rState = [rState stringByReplacingOccurrencesOfString:@" "
+//                                                       withString:@"+"];
+//            if (rCity == NULL || rState == NULL ) {
+//                UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Unable to find Beer"
+//                                                                  message:@"Make sure you are connected Bitch!"
+//                                                                 delegate:self
+//                                                        cancelButtonTitle:@"Try Again"
+//                                                        otherButtonTitles: nil];
+//                [message show];
+//                returnedJSON = @"";
+//            }
+//            else{
+//                returnedJSON = [connection getLocations: rCity withRegion: rState];
+//                
+//                json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+//                
+//                NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json
+//                                                                           options:0
+//                                                                             error:&jsonParsingError];
+//                
+//                NSArray *data = [jsonObject objectForKey:@"data"];
+//                if ([data count] < 30) {
+//                    
+//                }
+//                
+//                
+//            }
+//            
+//        }
+//    }
 }
 @end

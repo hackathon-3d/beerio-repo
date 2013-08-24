@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet NSString *data;
+@property float latitude;
+@property float longitude;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

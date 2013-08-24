@@ -36,6 +36,14 @@
     return [self getResponse:url];
 }
 
+- (NSString *) getAllLocations{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=%@",apiKey];
+    
+    return [self getResponse:url];
+}
+
+
 - (NSString *) getLocation: (NSString *)locationId{
     
     NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/location/%@?key=%@", locationId,apiKey];

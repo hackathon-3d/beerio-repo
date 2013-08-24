@@ -17,6 +17,8 @@
 GMSMapView *mapView_;
 
 @synthesize data;
+@synthesize latitude;
+@synthesize longitude;
 
 
 
@@ -52,14 +54,14 @@ GMSMapView *mapView_;
     
     brewery= [breweryArray objectAtIndex:0];
     
-    double mapLatit = [[brewery objectForKey:@"latitude"] doubleValue];
-    double mapLongit = [[brewery objectForKey:@"longitude"] doubleValue];
+    double mapLatit = latitude;
+    double mapLongit = longitude;
     
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:mapLatit
                                                             longitude:mapLongit
-                                                                 zoom:11];
+                                                                 zoom:10];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
     self.view = mapView_;
