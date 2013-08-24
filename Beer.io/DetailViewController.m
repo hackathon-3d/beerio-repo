@@ -19,6 +19,8 @@ GMSMapView *mapView_;
 @synthesize data;
 @synthesize latitude;
 @synthesize longitude;
+@synthesize breweryLabel;
+@synthesize breweryName;
 
 
 
@@ -33,11 +35,11 @@ GMSMapView *mapView_;
     
      [self performSegueWithIdentifier: @"getDetails" sender: self];
     
+    
 
-//    BreweryDetailsViewController *control = [[BreweryDetailsViewController alloc] init];
-//    control.modalPresentationStyle = UIModalPresentationFormSheet;
-//    control.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    [self presentModalViewController:control animated:YES];
+    BreweryDetailsViewController *control = [[BreweryDetailsViewController alloc] init];
+    
+    control.breweryId = marker.userData;
 
     
 }
@@ -85,6 +87,7 @@ GMSMapView *mapView_;
         marker.title = [location objectForKey:@"name"];
         marker.snippet = [location objectForKey:@"description"];
         marker.map = mapView_;
+        marker.userData = [brewery objectForKey: @"id"];
         
         
        

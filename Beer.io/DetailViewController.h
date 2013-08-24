@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet NSArray *data;
 @property float latitude;
 @property float longitude;
+@property (nonatomic, strong) IBOutlet UILabel *breweryLabel;
+@property (nonatomic, strong) NSString *breweryName;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
