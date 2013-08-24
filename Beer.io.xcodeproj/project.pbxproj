@@ -37,9 +37,12 @@
 		B2AE647517C845F30044D65F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646A17C845F30044D65F /* OpenGLES.framework */; };
 		B2AE647617C845F30044D65F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646B17C845F30044D65F /* QuartzCore.framework */; };
 		B2AE647717C845F30044D65F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646C17C845F30044D65F /* SystemConfiguration.framework */; };
-		B2AE647917C84AB40044D65F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE647817C84AB40044D65F /* CoreLocation.framework */; };
 		F7BCE09517C840ED00368C30 /* berr.io_logo_reg.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */; };
 		F7BCE09817C8412300368C30 /* berr.io_logo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */; };
+		F7DF075717C84A6500E2B8BF /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075617C84A6500E2B8BF /* Default-Portrait~ipad.png */; };
+		F7DF075917C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075817C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png */; };
+		F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */; };
+		F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +93,12 @@
 		B2AE646A17C845F30044D65F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B2AE646B17C845F30044D65F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B2AE646C17C845F30044D65F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B2AE647817C84AB40044D65F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_reg.png; sourceTree = "<group>"; };
 		F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_retina.png; sourceTree = "<group>"; };
+		F7DF075617C84A6500E2B8BF /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		F7DF075817C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2AE647917C84AB40044D65F /* CoreLocation.framework in Frameworks */,
 				B2AE646D17C845F30044D65F /* AVFoundation.framework in Frameworks */,
 				B2AE646E17C845F30044D65F /* CoreData.framework in Frameworks */,
 				B2AE646F17C845F30044D65F /* CoreText.framework in Frameworks */,
@@ -135,7 +140,10 @@
 		B2AE641417C83EE40044D65F = {
 			isa = PBXGroup;
 			children = (
-				B2AE647817C84AB40044D65F /* CoreLocation.framework */,
+				F7DF075C17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png */,
+				F7DF075A17C84C6300E2B8BF /* Default-Landscape~ipad.png */,
+				F7DF075817C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png */,
+				F7DF075617C84A6500E2B8BF /* Default-Portrait~ipad.png */,
 				B2AE646217C845F30044D65F /* AVFoundation.framework */,
 				B2AE646317C845F30044D65F /* CoreData.framework */,
 				B2AE646417C845F30044D65F /* CoreText.framework */,
@@ -305,6 +313,10 @@
 				F7BCE09517C840ED00368C30 /* berr.io_logo_reg.png in Resources */,
 				F7BCE09817C8412300368C30 /* berr.io_logo_retina.png in Resources */,
 				B2AE646117C845650044D65F /* GoogleMaps.bundle in Resources */,
+				F7DF075717C84A6500E2B8BF /* Default-Portrait~ipad.png in Resources */,
+				F7DF075917C84C5D00E2B8BF /* Default-Portrait@2x~ipad.png in Resources */,
+				F7DF075B17C84C6300E2B8BF /* Default-Landscape~ipad.png in Resources */,
+				F7DF075D17C84C6500E2B8BF /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
