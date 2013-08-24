@@ -7,13 +7,11 @@
 //
 
 #import "brewerydbconnect.h"
+#define apiKey @"fb8684f5499a9dad231f262efca6b2f5"
 
 @implementation brewerydbconnect
 
-- (NSString *) getLocations:(NSString *)city withRegion:(NSString *)region{
-    
-    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=fb8684f5499a9dad231f262efca6b2f5&locality=%@&region=%@", city, region];
-    
+- (NSString *) getResponse:(NSString *) url{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
@@ -29,6 +27,26 @@
     }
     
     return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *) getLocations:(NSString *)city withRegion:(NSString *)region{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/locations?key=%@&locality=%@&region=%@",apiKey, city, region];
+    
+    return [self getResponse:url];
+}
+
+- (NSString *) getLocation: (NSString *)locationId{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/location/%@?key=%@", locationId,apiKey];
+    
+    return [self getResponse:url];
+}
+- (NSString *) searchBrewerys: (NSString *)query{
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.brewerydb.com/v2/search?key=%@&q=%@", apiKey, query];
+    
+    return [self getResponse:url];
 }
 
 @end

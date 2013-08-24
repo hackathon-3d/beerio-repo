@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface brewerydbconnect : NSObject
+- (NSString *) getResponse:(NSString *) url;
 - (NSString *) getLocations: (NSString *)city withRegion:(NSString *)region;
+- (NSString *) getLocation: (NSString *)locationId;
+- (NSString *) searchBrewerys: (NSString *)query;
+
 @end
