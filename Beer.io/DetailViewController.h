@@ -14,6 +14,6 @@
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-@property (weak, nonatomic) GMSMapView *mapView_;
+
 
 @end
