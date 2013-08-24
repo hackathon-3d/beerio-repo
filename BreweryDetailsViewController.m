@@ -72,7 +72,12 @@ NSArray *recipes;
     
     NSDictionary *beer = [recipes objectAtIndex:indexPath.row];
     NSString *name = [beer objectForKey:@"name"];
+    NSDictionary *labels = [beer objectForKey:@"labels"];
+    NSString *img = [labels objectForKey:@"icon"];
     cell.textLabel.text = name;
+    cell.imageView.image = [UIImage imageWithData:
+                            [NSData dataWithContentsOfURL:
+                             [NSURL URLWithString: img]]];
     return cell;
 }
 
