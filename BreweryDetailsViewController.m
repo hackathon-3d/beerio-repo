@@ -26,11 +26,29 @@ NSArray *recipes;
     [super viewDidLoad];
     
     NSLog(@"BITCHES AND HOES");
+    NSString *returnedJSON;
+    NSError *jsonParsingError;
+    NSData *json;
+    NSDictionary *jsonObject;
     
+    brewerydbconnect *connection = [[brewerydbconnect alloc] init];
+    returnedJSON = [connection getBreweryBeers:(breweryId)];
+    json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
+    
+    jsonObject = [NSJSONSerialization JSONObjectWithData:json
+                                                               options:0
+                                                                 error:&jsonParsingError];
+    NSArray *results = [jsonObject objectForKey:@"data"];
+    NSMutableArray *beerNames = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [results count]; i++) {
+        NSDictionary *beer = [results objectAtIndex:i];
+        NSString *tmpName = [beer objectForKey:@"name"];
+        [beerNames addObject:tmpName];
+    }
     
 	// Do any additional setup after loading the view.
-    recipes = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    
+    recipes = beerNames;
    
     
     

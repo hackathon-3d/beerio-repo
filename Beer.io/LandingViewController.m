@@ -147,7 +147,7 @@ CLLocationManager *locationManager;
                 returnedJSON = @"";
             }
             else{
-                returnedJSON = returnedJSON = [connection getCityState:(query)];
+                returnedJSON = [connection getCityState:(query)];
                 json=[returnedJSON dataUsingEncoding:NSUTF8StringEncoding];
                 
                 NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "brewerydbconnect.h"
 
 @interface BreweryDetailsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
