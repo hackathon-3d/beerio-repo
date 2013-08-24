@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B289902917C8A0E000394537 /* city_state.png in Resources */ = {isa = PBXBuildFile; fileRef = B289902817C8A0E000394537 /* city_state.png */; };
 		B289902E17C8C11F00394537 /* BreweryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */; };
+		B289903117C8EFB300394537 /* BeerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B289903017C8EFB300394537 /* BeerDetailViewController.m */; };
 		B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D2FA017C8641700DC26A5 /* LandingViewController.m */; };
 		B29D2FA517C8644200DC26A5 /* logo_small-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA317C8644200DC26A5 /* logo_small-1.png */; };
 		B29D2FA717C8659100DC26A5 /* search_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D2FA617C8659100DC26A5 /* search_button.png */; };
@@ -74,6 +75,8 @@
 		B289902817C8A0E000394537 /* city_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city_state.png; sourceTree = "<group>"; };
 		B289902C17C8C11F00394537 /* BreweryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BreweryDetailsViewController.h; path = ../BreweryDetailsViewController.h; sourceTree = "<group>"; };
 		B289902D17C8C11F00394537 /* BreweryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BreweryDetailsViewController.m; path = ../BreweryDetailsViewController.m; sourceTree = "<group>"; };
+		B289902F17C8EFB300394537 /* BeerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerDetailViewController.h; sourceTree = "<group>"; };
+		B289903017C8EFB300394537 /* BeerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerDetailViewController.m; sourceTree = "<group>"; };
 		B29D2F9F17C8641700DC26A5 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		B29D2FA017C8641700DC26A5 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		B29D2FA317C8644200DC26A5 /* logo_small-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small-1.png"; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 				B2AE642717C83EE40044D65F /* Supporting Files */,
 				B29D2F9F17C8641700DC26A5 /* LandingViewController.h */,
 				B29D2FA017C8641700DC26A5 /* LandingViewController.m */,
+				B289902F17C8EFB300394537 /* BeerDetailViewController.h */,
+				B289903017C8EFB300394537 /* BeerDetailViewController.m */,
 			);
 			path = Beer.io;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				FF38723E17C85BA700D95498 /* brewerydbconnect.m in Sources */,
 				B29D2FA117C8641700DC26A5 /* LandingViewController.m in Sources */,
 				B289902E17C8C11F00394537 /* BreweryDetailsViewController.m in Sources */,
+				B289903117C8EFB300394537 /* BeerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

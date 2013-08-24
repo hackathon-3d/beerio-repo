@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BreweryDetailsViewController : UIViewController
+@interface BreweryDetailsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+
 
 @end
