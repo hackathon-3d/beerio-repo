@@ -50,9 +50,9 @@
     
     return [self getResponse:url];
 }
-- (NSString *) getCityState:(int)lat withLong:(int)lon{
+- (NSString *) getCityState:(double)lat withLong:(double)lon{
     
-    NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%i,%i&sensor=false", lat, lon];
+    NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%d,%d&sensor=false", lat, lon];
     
     return [self getResponse:url];
 }
