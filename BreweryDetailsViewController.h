@@ -10,5 +10,10 @@
 
 @interface BreweryDetailsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
+- (void)setBreweryId:(NSString *)breweryIdHa;
+
+@property (nonatomic, strong) NSString *breweryId;
+
+
 
 @end

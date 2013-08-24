@@ -33,13 +33,15 @@ GMSMapView *mapView_;
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     
-     [self performSegueWithIdentifier: @"getDetails" sender: self];
     
     
-
     BreweryDetailsViewController *control = [[BreweryDetailsViewController alloc] init];
     
     control.breweryId = marker.userData;
+    NSLog(@"GAY");
+    NSLog(control.breweryId);
+    
+    [self performSegueWithIdentifier: @"getDetails" sender: self];
 
     
 }
@@ -88,6 +90,7 @@ GMSMapView *mapView_;
         marker.snippet = [location objectForKey:@"description"];
         marker.map = mapView_;
         marker.userData = [brewery objectForKey: @"id"];
+        NSLog(marker.userData);
         
         
        
