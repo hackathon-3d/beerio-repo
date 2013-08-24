@@ -48,15 +48,7 @@ GMSMapView *mapView_;
 - (void)viewDidLoad
 {
     
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:32.7025
-                                                            longitude:-80.04806
-                                                                 zoom:6];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
-    
+       
     
     NSError *jsonParsingError = nil;
     NSData *json=[data dataUsingEncoding:NSUTF8StringEncoding];
@@ -70,24 +62,45 @@ GMSMapView *mapView_;
     
     NSDictionary *brewery;
     
+    brewery= [breweryArray objectAtIndex:0];
+    
+    double mapLatit = [[brewery objectForKey:@"latitude"] doubleValue];
+    double mapLongit = [[brewery objectForKey:@"longitude"] doubleValue];
+    
+    // Create a GMSCameraPosition that tells the map to display the
+    // coordinate -33.86,151.20 at zoom level 6.
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:mapLatit
+                                                            longitude:mapLongit
+                                                                 zoom:8];
+    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView_.myLocationEnabled = YES;
+    self.view = mapView_;
+
+    
+    
     for(int i=0; i<[breweryArray count];i++)
     {
-        brewery= [breweryArray objectAtIndex:i];
-        NSLog([brewery objectForKey:@"name"]);
         
-        NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"latitude"]]);
-        NSLog(@"%@", [NSString stringWithFormat:@"%@", [brewery objectForKey:@"longitude"]]);
+        brewery= [breweryArray objectAtIndex:i];
+        
+        NSDictionary *location = [brewery objectForKey:@"brewery"];
+        NSDictionary *images = [location objectForKey:@"images"];
+        NSString *icon = [images objectForKey:@"icon"];
         
         double latit = [[brewery objectForKey:@"latitude"] doubleValue];
         double longit = [[brewery objectForKey:@"longitude"] doubleValue];
         
-
+        
+        
         // Creates a marker in the center of the map.
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(latit, longit);
-        marker.title = [brewery objectForKey:@"name"];
-        marker.snippet = @"fuck you";
+        marker.title = [location objectForKey:@"name"];
+        marker.snippet = [brewery objectForKey:@"phone"];
         marker.map = mapView_;
+        
+        
+       
     }
     
     
