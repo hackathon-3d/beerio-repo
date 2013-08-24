@@ -77,7 +77,20 @@ GMSMapView *mapView_;
         marker.icon = [UIImage imageNamed:@"marker.png"];
         marker.position = CLLocationCoordinate2DMake(latit, longit);
         marker.title = [location objectForKey:@"name"];
-        marker.snippet = [location objectForKey:@"description"];
+        NSString *desc = [location objectForKey:@"description"];
+        if(desc == NULL){
+            desc = @"";
+        }
+        NSString *web = [location objectForKey:@"website"];
+        if(web == NULL){
+            web = @"N/A";
+        }
+        
+        NSString *phone = [brewery objectForKey:@"phone"];
+        if(phone == NULL){
+            phone = @"N/A";
+        }
+        marker.snippet =  [NSString stringWithFormat:@"%@  -   %@   - %@", phone, web, desc];
         marker.map = mapView_;
         marker.userData = [location objectForKey: @"id"];
         NSLog(marker.userData);
