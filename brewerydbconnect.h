@@ -13,5 +13,7 @@
 - (NSString *) getLocations: (NSString *)city withRegion:(NSString *)region;
 - (NSString *) getLocation: (NSString *)locationId;
 - (NSString *) searchBrewerys: (NSString *)query;
+- (NSString *) getCityState:(int)lat withLong:(int)lon;
+- (NSString *) getCityState:(NSString *)q;
 
 @end

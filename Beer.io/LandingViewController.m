@@ -66,8 +66,10 @@ CLLocationManager *locationManager;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    brewerydbconnect *connection = [[brewerydbconnect alloc] init];
+    NSString *returnedJSON;
     if ([segue.identifier isEqualToString:@"toResults"]) {
-        brewerydbconnect *connection = [[brewerydbconnect alloc] init];
         
         NSString *city = [cityField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         NSString *region = [stateField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -75,34 +77,19 @@ CLLocationManager *locationManager;
                                                withString:@"+"];
         region = [region stringByReplacingOccurrencesOfString:@" "
                                                    withString:@"+"];
-        NSString *returnedJSON = [connection getLocations:(city) withRegion:(region)];
+        returnedJSON = [connection getLocations:(city) withRegion:(region)];
 
         
-        DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.data = returnedJSON;
+        
     }
     
     else if([segue.identifier isEqualToString:@"toResultsCurrentLocation"]){
-                
 
-        NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setHTTPMethod:@"GET"];
-        [request setURL:[NSURL URLWithString:url]];
-        
-        NSError *error = [[NSError alloc] init];
-        NSHTTPURLResponse *responseCode = nil;
-        
-        NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
-        
-        if([responseCode statusCode] != 200){
-            NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
-            
-        }
-        
-        NSLog([[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding]);
+        returnedJSON = [connection getCityState:(locationManager.location.coordinate.latitude) withLong:(locationManager.location.coordinate.longitude)];
+
         
     }
+    DetailViewController *destViewController = segue.destinationViewController;
+    destViewController.data = returnedJSON;
 }
 @end
