@@ -37,6 +37,7 @@
 		B2AE647517C845F30044D65F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646A17C845F30044D65F /* OpenGLES.framework */; };
 		B2AE647617C845F30044D65F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646B17C845F30044D65F /* QuartzCore.framework */; };
 		B2AE647717C845F30044D65F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE646C17C845F30044D65F /* SystemConfiguration.framework */; };
+		B2AE647917C84AB40044D65F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AE647817C84AB40044D65F /* CoreLocation.framework */; };
 		F7BCE09517C840ED00368C30 /* berr.io_logo_reg.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */; };
 		F7BCE09817C8412300368C30 /* berr.io_logo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		B2AE646A17C845F30044D65F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B2AE646B17C845F30044D65F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B2AE646C17C845F30044D65F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B2AE647817C84AB40044D65F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F7BCE09417C840ED00368C30 /* berr.io_logo_reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_reg.png; sourceTree = "<group>"; };
 		F7BCE09717C8412300368C30 /* berr.io_logo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berr.io_logo_retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AE647917C84AB40044D65F /* CoreLocation.framework in Frameworks */,
 				B2AE646D17C845F30044D65F /* AVFoundation.framework in Frameworks */,
 				B2AE646E17C845F30044D65F /* CoreData.framework in Frameworks */,
 				B2AE646F17C845F30044D65F /* CoreText.framework in Frameworks */,
@@ -132,6 +135,7 @@
 		B2AE641417C83EE40044D65F = {
 			isa = PBXGroup;
 			children = (
+				B2AE647817C84AB40044D65F /* CoreLocation.framework */,
 				B2AE646217C845F30044D65F /* AVFoundation.framework */,
 				B2AE646317C845F30044D65F /* CoreData.framework */,
 				B2AE646417C845F30044D65F /* CoreText.framework */,
